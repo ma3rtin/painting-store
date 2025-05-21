@@ -1,12 +1,40 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Proyecto final: Tienda de Pinturas 🖼️ 
+## Descripción
 
-Currently, two official plugins are available:
+Proyecto realizado como parte del curso **Talento Tech - React JS**
+La aplicación simula una tienda virtual de venta de pinturas, utilizando la [API del Museo de Arte de Harvard](https://www.harvardartmuseums.org/collections/api), desarrollada con **React** y **Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+-  **Galería de pinturas** con datos reales desde la API.
+- **Carrito de compras** para simular la compra de obras.
 
-If you are developing a paintingion application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+
+
+##  Cómo utilizarlo
+
+#### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/ma3rtin/painting-store.git
+```
+
+#### 2. Instalar dependencias
+```bash
+cd painting-store
+npm install
+```
+#### 3. Configurar API key
+
+Agrega la API key en este formato en el .env
+```bash
+VITE_API_KEY=TU_API_KEY_DE_HARVARD
+```
+La api key se obtiene gratuitamente acá: https://www.harvardartmuseums.org/collections/api
+
+#### 4. Ejecutar el proyecto
+```bash
+npm run dev
+```
