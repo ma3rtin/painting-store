@@ -4,7 +4,7 @@ import "./staticStyle.css"
 function Footer() {
   return (
       <footer>
-        <p>&copy; 2025 Pruebitas. All rights reserved.</p>
+        <p>&copy; 2025 Painting Store. All rights reserved.</p>
       </footer>
   )
 }

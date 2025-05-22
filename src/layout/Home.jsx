@@ -3,6 +3,7 @@ import Footer from "../components/static/Footer";
 import PaintingList from "../components/PaintingList";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import loadingGif  from "../assets/loading.gif";
 
 function Home() {
   const { loading, error } = useContext(CartContext);
@@ -22,7 +23,7 @@ function Home() {
           Quod quae consequatur vero molestiae?
         </p>
         {loading ? (
-          <div>Loading...</div>
+          <div><img src={loadingGif} alt="loading" /></div>
         ) : error ? (
           <div>Error: {error.message}</div>
         ) : (
