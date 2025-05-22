@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Painting from "./Painting";
-import "./stylePainting.css";
+import "../styles/stylePainting.css";
 import { CartContext } from "../context/CartContext";
 import { Navigate } from "react-router-dom";
 

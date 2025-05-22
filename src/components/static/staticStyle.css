@@ -1,5 +1,5 @@
 nav{
-    background-color: #333;
+    background-color: var(--primary-color);
     color: white;
     padding: 10px;
     display: flex;
@@ -31,19 +31,25 @@ footer{
 .nav-link {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  color: gray;
+  color: #f1f1f9;
+}
+
+.nav-link:hover {
+  color: #f1f1f1;
+  background-color: #333;
+  border-radius: 5px;
 }
 
 .nav-link.active {
-  color: black;
+  color: #f1f1f1;
   font-weight: bold;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #f1f1f1;
 }
 
 .nav-button {
   background: none;
   border: none;
-  color: gray;
+  color: #f1f1f1;
   cursor: pointer;
   padding: 0.5rem 1rem;
 }

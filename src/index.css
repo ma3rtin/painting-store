@@ -2,22 +2,12 @@
 
 :root {
     --primary-color: #0f0f0f;
-    --secondary-color: #b9d6ee;
-    --background-color: #ecf0f1;
+    --secondary-color: #7e7f80;
+    --background-color: #bdbebe;
     --text-color: #2f3235;
     --font-family: Lato, sans-serif;
     line-height: 1.6;
     font-weight: 400;
-
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--primary-color);
 }
 
 p {
@@ -29,12 +19,6 @@ a,
     font-weight: 500;
     color: var(--primary-color);
     text-decoration: none;
-}
-
-a:hover,
-.link:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
 }
 
 body {
@@ -76,4 +60,12 @@ button:hover {
 .login-buttons{
     display: flex;
     gap: 10px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }

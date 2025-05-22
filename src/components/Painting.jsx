@@ -1,4 +1,4 @@
-import "./stylePainting.css";
+import "../styles/stylePainting.css";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";

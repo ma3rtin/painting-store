@@ -4,7 +4,7 @@
     justify-content: center;
     margin: 20px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
 }
 
 .painting-card {
@@ -13,11 +13,17 @@
     align-items: center;
     margin: 10px;
     padding: 10px;
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 250px;
+    transition: box-shadow 0.3s ease;
 }
+.painting-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
 
 .painting-image {
     width: 250px;
@@ -31,13 +37,12 @@
 
 .painting-title {
     font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
+    font-style: italic;
+    color: #333;
 }
 
 .painting-price {
     font-size: 16px;
-    margin: 5px 0;
 }
 
 .add-to-cart-button {
