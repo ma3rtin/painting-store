@@ -1,32 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 function Nav() {
   const { cart } = useContext(CartContext);
+
+  const getLinkClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
   return (
     <nav>
       <h1>Painting Store</h1>
       <ul>
         <li>
-          <Link to="/" className="link">
+          <NavLink to="/" className={getLinkClass}>
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" className="link">
+          <NavLink to="/about" className={getLinkClass}>
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact" className="link">
-            Contact
-          </Link>
+          <NavLink to="/admin" className={getLinkClass}>
+            Admin
+          </NavLink>
         </li>
         <li>
-          <Link to="/cart" className="link">
+          <NavLink to="/cart" className={getLinkClass}>
             Cart: {cart.length}
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

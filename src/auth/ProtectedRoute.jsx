@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Navigate } from "react-router-dom";
+import { SessionContext } from "../context/SessionContext";
 
-function ProtectedRoute({ isAuthenticated, children }) {
+function ProtectedRoute({  children }) {
+  const {isAuthenticated} = useContext(SessionContext);
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }

@@ -27,3 +27,23 @@ footer{
     padding: 10px;
     text-align: center;
 }
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  color: gray;
+}
+
+.nav-link.active {
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}

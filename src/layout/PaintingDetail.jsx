@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import { Details } from "../components/Details";
+import { useContext } from "react";
+import Details from "../components/Details";
 import Header from "../components/static/Header";
 import Footer from "../components/static/Footer";
 

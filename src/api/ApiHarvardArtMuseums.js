@@ -27,3 +27,21 @@ export async function fetchPaintings() {
       }))
   );
 }
+
+export const fetchPaintingById = async (id) => {
+  const url = `https://api.harvardartmuseums.org/object/${id}?apikey=${VITE_API_KEY}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  const data = await response.json();
+  return {
+    id: data.id,
+    title: data.title,
+    image: data.primaryimageurl || null,
+    price: Math.floor(Math.random() * 100) + 1,
+    description: data.description || "No description available",
+    artist: data.people
+      ? data.people.map((person) => person.displayname || "Unknown") : "Unknown",
+  };
+}

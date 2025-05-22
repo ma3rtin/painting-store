@@ -1,44 +1,43 @@
-:root{
-    --primary-color: #1272b3;
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #0f0f0f;
     --secondary-color: #b9d6ee;
     --background-color: #ecf0f1;
     --text-color: #2f3235;
-    --title-font: Roboto, sans-serif;
-    --text-font: Helvetica, sans-serif;
-    --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-family: Lato, sans-serif;
     line-height: 1.6;
     font-weight: 400;
 
 }
 
-/* body{
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--title-font);
-    line-height: var(--line-height);
-    font-weight: var(--font-weight);
-} */
-
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--primary-color);
 }
 
-p{
+p {
     line-height: 1.6;
 }
 
-a, .link{
+a,
+.link {
     font-weight: 500;
     color: var(--primary-color);
     text-decoration: none;
 }
 
-a:hover, .link:hover{
+a:hover,
+.link:hover {
     color: var(--primary-color);
     text-decoration: underline;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: var(--font-family);
@@ -46,7 +45,7 @@ body{
     color: var(--text-color);
 }
 
-button{
+button {
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -55,13 +54,26 @@ button{
     font-size: 16px;
 }
 
-button:hover{
+button:hover {
     background-color: var(--secondary-color);
 }
 
-.not-found{
+.not-found {
     text-align: center;
     margin: 50px;
     padding: 20px;
     background-color: var(--secondary-color);
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.login-buttons{
+    display: flex;
+    gap: 10px;
 }

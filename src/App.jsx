@@ -4,7 +4,10 @@ import About from "./layout/About";
 import Contact from "./layout/Contact";
 import Cart from "./layout/Cart";
 import NotFound from "./layout/NotFound";
-
+import PaintingDetail from "./layout/PaintingDetail";
+import Admin from "./layout/Admin";
+import ProtectedRoute from "./auth/ProtectedRoute";
+import Login from "./layout/Login";
 
 function App() {
   return (
@@ -15,8 +18,17 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/paintings/:paintingId" element={<PaintingDetail />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/paintings/:paintingId" element={<Cart />} />
         </Routes>
       </Router>
     </>
