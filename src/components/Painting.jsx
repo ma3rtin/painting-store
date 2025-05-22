@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 function Painting({ painting }) {
-  const { addToCart } = useContext(CartContext);
+  const { handleAddToCart } = useContext(CartContext);
   return (
     <div className="painting-card" key={painting.id}>
       <img
@@ -11,11 +11,16 @@ function Painting({ painting }) {
         alt={painting.title}
         className="painting-image"
       />
-      <h3 className="painting-name">{painting.title}</h3>
-      <p className="painting-price">${painting.price}</p>
-      <p className="painting-description">{painting.description}</p>
-      <p className="painting-artist">{painting.artist}</p>
-      <button onClick={() => addToCart(painting)}>Add to Cart</button>
+      <div className="painting-info">
+        <h3 className="painting-title">{painting.title}</h3>
+        <p className="painting-price">${painting.price}</p>
+      </div>
+      <button
+        onClick={() => handleAddToCart(painting)}
+        className="add-to-cart-button"
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }

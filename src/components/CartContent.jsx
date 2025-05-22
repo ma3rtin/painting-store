@@ -1,8 +1,12 @@
-function Cart({ cartItems }) {
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+
+function CartContent() {
+  const { cart, handleRemoveFromCart } = useContext(CartContext);
   return (
     <div>
       <h2>Cart</h2>
-      {cartItems.length === 0 ? (
+      {cart.length === 0 ? (
         <p>Cart empty</p>
       ) : (
         <table>
@@ -15,13 +19,13 @@ function Cart({ cartItems }) {
             </tr>
           </thead>
           <tbody>
-            {cartItems.map((item, index) => (
+            {cart.map((item, index) => (
               <tr key={index}>
-                <td><img src="{item.image}" alt="{item.name}"></img></td>
+                <td><img src={item.image} alt={item.title}></img></td>
                 <td>{item.title}</td>
                 <td>${item.price}</td>
                 <td>
-                  <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
+                  <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
                 </td>
               </tr>
             ))}
@@ -32,4 +36,4 @@ function Cart({ cartItems }) {
   );
 }
 
-export default Cart;
+export default CartContent;

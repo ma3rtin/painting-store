@@ -4,7 +4,6 @@ import { CartContext } from "../../context/CartContext";
 
 function Nav() {
   const { cart } = useContext(CartContext);
-  const countItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   return (
     <nav>
       <h1>Painting Store</h1>
@@ -20,18 +19,13 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/paintings" className="link">
-            Paintings
-          </Link>
-        </li>
-        <li>
           <Link to="/contact" className="link">
             Contact
           </Link>
         </li>
         <li>
           <Link to="/cart" className="link">
-            Cart: {countItems}
+            Cart: {cart.length}
           </Link>
         </li>
       </ul>
