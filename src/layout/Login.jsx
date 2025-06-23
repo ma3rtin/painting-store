@@ -51,52 +51,52 @@ function Login() {
 
   return (
     <div>
-        <Header />
+      <Header />
       <div className="login-page">
         <div className="form-container">
-          <h1>Login</h1>
-          <div className="mt-4">
-            <form onSubmit={handleLogin}>
-              <div className="mb-3">
-                <label className="form-label" htmlFor="email">
-                  Email:
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="form-control"
-                />
-                {error.email && (
-                  <p className="invalid-feedback">{error.email}</p>
-                )}
-              </div>
-              <div className="mb-3">
-                <label className="form-label" htmlFor="password">
-                  Password:
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="form-control"
-                />
-              </div>
+          <h1 className="form-title">Login</h1>
+          
+          <form onSubmit={handleLogin}>
+            
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                className={`form-input ${error.email ? "input-error" : ""}`}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {error.email && (
+                <p className="error-text">{error.email}</p>
+              )}
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                className={`form-input ${error.password ? "input-error" : ""}`}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
               {error.password && (
-                <p className="invalid-feedback">{error.password}</p>
+                <p className="error-text">{error.password}</p>
               )}
-              <div className="btn-container mb-3">
-                <button type="submit" className="btn btn-primary">
-                  Login
-                </button>
-              </div>
-              {error.general && (
-                <p className="invalid-feedback">{error.general}</p>
-              )}
-            </form>
-          </div>
+            </div>
+
+            {error.general && (
+              <p className="error-text">{error.general}</p>
+            )}
+
+            <div className="btn-container">
+              <button type="submit" className="btn-primary">
+                Login
+              </button>
+            </div>
+
+          </form>
         </div>
       </div>
       <Footer />
