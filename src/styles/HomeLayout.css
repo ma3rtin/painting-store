@@ -1,0 +1,189 @@
+/* ===== Hero Section ===== */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background:
+    linear-gradient(135deg, rgba(29, 29, 29, 0.363), rgba(80, 80, 80, 0.8)),
+    url(../assets/image-hero.jpg) no-repeat center center;
+  background-size: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.hero-title {
+  font-family: 'Georgia', serif;
+  font-size: 3rem;
+  color: #fdfdfd;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #fafafa;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #f0c040;
+  color: #111;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e0b030;
+  transform: scale(1.05);
+}
+
+/* ===== Loading / Error ===== */
+.loading-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.loading-container img {
+  width: 80px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.painting-list-wrapper {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1 1 300px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #f0c040;
+}
+
+.result-count {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+
+/* ==== Contenedor de la Galería ==== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+/* ==== Tarjeta de Pintura ==== */
+.art-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 260px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.art-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ==== Imagen de la Pintura ==== */
+.art-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.art-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.art-image-wrapper:hover .art-image {
+  transform: scale(1.05);
+}
+
+/* ==== Cuerpo de la Tarjeta ==== */
+.art-card-body {
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.art-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.art-price {
+  font-size: 1.1rem;
+  color: #4caf50;
+  margin: 0.5rem 0 1rem;
+}
+
+/* ==== Botón Añadir al Carrito ==== */
+.add-to-cart-btn {
+  background-color: #f0c040;
+  border: none;
+  color: #111;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e0b030;
+  transform: scale(1.05);
+}
+
+.empty-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 2rem;
+}

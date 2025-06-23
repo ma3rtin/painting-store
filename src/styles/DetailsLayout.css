@@ -1,0 +1,109 @@
+.details-section {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap; /* Para responsive */
+}
+
+/* Info a la izquierda */
+.details-info {
+  flex: 1 1 400px;
+  max-width: 500px;
+  text-align: left;
+}
+
+/* Imagen a la derecha */
+.details-image-wrapper {
+  flex: 1 1 400px;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.details-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.details-image-wrapper:hover .details-image {
+  transform: scale(1.05);
+}
+
+/* Texto y botón */
+.details-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.details-artist {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.details-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.details-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 2rem;
+}
+
+.details-add-btn {
+  background-color: #f0c040;
+  border: none;
+  color: #111;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.details-add-btn:hover {
+  background-color: #e0b030;
+  transform: scale(1.05);
+}
+
+/* ===== Responsive: imagen abajo en mobile ===== */
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details-image-wrapper{
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .details-info {
+    text-align: center;
+  }
+}

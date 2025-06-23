@@ -1,11 +1,19 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { FaTrash } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
 
 function CartContent() {
-  const { cart, handleRemoveFromCart } = useContext(CartContext);
+  const { cart, handleRemoveFromCart, handleRemoveAllFromCart } =
+    useContext(CartContext);
+  const total = cart.reduce(
+    (acc, item) => (acc = acc + parseFloat(item.price)),
+    0
+  );
   return (
     <div className="cart-container">
-      <h2 className="cart-title">Your Cart</h2>
+      <ToastContainer />
+      <h2 className="cart-title">Cart</h2>
       {cart.length === 0 ? (
         <p className="cart-empty">Your cart is empty.</p>
       ) : (
@@ -16,7 +24,7 @@ function CartContent() {
                 <th>Preview</th>
                 <th>Title</th>
                 <th>Price</th>
-                <th></th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -43,6 +51,17 @@ function CartContent() {
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+      {cart.length > 0 && (
+        <div className="cart-total">
+          <button
+            className="btn btn-outline-danger"
+            onClick={handleRemoveAllFromCart}
+          >
+            <FaTrash />
+          </button>
+          <p>Total: ${total.toFixed(2)}</p>
         </div>
       )}
     </div>

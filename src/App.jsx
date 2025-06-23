@@ -8,6 +8,8 @@ import PaintingDetail from "./layout/PaintingDetail";
 import Admin from "./layout/Admin";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Login from "./layout/Login";
+import AddPainting from "./layout/AddPainting";
+import EditPainting from "./layout/EditPainting";
 
 function App() {
   return (
@@ -24,6 +26,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/paintings/add"
+            element={
+              <ProtectedRoute>
+                <AddPainting />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/paintings/edit/:paintingId"
+            element={
+              <ProtectedRoute>
+                <EditPainting />
               </ProtectedRoute>
             }
           />

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
-import { fetchPaintings } from "../api/ApiHarvardArtMuseums";
+import { fetchPaintings, createPainting, updatePainting } from "../api/MockApi";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext();
 
@@ -9,6 +10,7 @@ export const CartProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [paintings, setPaintings] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetchPaintings()
@@ -26,11 +28,23 @@ export const CartProvider = ({ children }) => {
       });
   }, []);
 
+  const filteredPaintings = paintings.filter((painting) => {
+    return painting?.title.toLowerCase().includes(search.toLowerCase());
+  });
+
+
   const handleAddToCart = (painting) => {
-    if(!cart.some((item) => item.id === painting.id)) {
+    if (!cart.some((item) => item.id === painting.id)) {
       setCart([...cart, painting]);
-    }else{
-        alert("Item already in cart");
+      toast.success(` "${painting.title}" added to cart.`, {
+        position: "top-right",
+        autoClose: 2500,
+      });
+    } else {
+      toast.warning(`"${painting.title}" is already in the cart.`, {
+        position: "top-right",
+        autoClose: 2500,
+      });
     }
   };
 
@@ -47,6 +61,29 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     handleCalculateTotal();
   }, [cart]);
+  const handleRemoveAllFromCart = () => {
+    setCart([]);
+    toast.success("All items removed from cart.", {
+      position: "top-right",
+      autoClose: 2500,
+    });
+  };
+
+   const handleUpdatePainting = async (data) => {
+    const res = await updatePainting(data.id, data);
+    if (res.ok) toast.success("Painting updated successfully!");
+    else toast.error("Error updating painting.");
+  };
+
+  const handleCreatePainting = async (painting) => {
+    try {
+          const res = await createPainting(painting);
+          if (res.ok) toast.success("Painting added successfully!");
+          else toast.error("Error adding painting.");
+        } catch (err) {
+          toast.error("Network error");
+        }
+  }
 
   return (
     <CartContext.Provider
@@ -59,6 +96,12 @@ export const CartProvider = ({ children }) => {
         handleAddToCart,
         handleRemoveFromCart,
         handleClearCart,
+        handleRemoveAllFromCart,
+        filteredPaintings,
+        handleCalculateTotal,
+        setSearch,
+        handleCreatePainting,
+        handleUpdatePainting
       }}
     >
       {children}

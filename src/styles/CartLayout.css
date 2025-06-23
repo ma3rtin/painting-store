@@ -1,5 +1,4 @@
 .cart-container {
-  max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
 }
@@ -12,7 +11,13 @@
 
 .cart-empty {
   text-align: center;
-  color: var(--primary-color);
+  margin-top: 3rem;
+  font-size: 2rem;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #353535;
 }
 
 .cart-table-wrapper {
@@ -29,19 +34,21 @@
 .cart-table th,
 .cart-table td {
   padding: 0.75rem 1rem;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #eee;
 }
 
 .cart-image {
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 4px;
 }
 
 
+
 .cart-remove-button {
-  background-color: #7c0c0a;
+  background-color: #da3a37;
   color: white;
   border: none;
   padding: 0.4rem 0.8rem;
@@ -51,5 +58,27 @@
 }
 
 .cart-remove-button:hover {
-  background-color: #c62828;
+  background-color: #910d0d;
 }
+
+.cart-total{
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+.cart-total button{
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-total p{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 1rem;
+}
+

@@ -1,8 +1,8 @@
-import './staticStyle.css'
+import './StaticStyle.css'
 import Nav from './Nav'
 function Header() {
   return (
-    <header>
+    <header className="main-header">
       <Nav/>
     </header>
   )

@@ -1,22 +1,37 @@
 import { useContext } from "react";
-import Painting from "./Painting";
-import "../styles/stylePainting.css";
 import { CartContext } from "../context/CartContext";
-import { Navigate } from "react-router-dom";
+import Painting from "./Painting";
+import { useNavigate } from "react-router-dom";
 
 function PaintingList() {
-  const { paintings } = useContext(CartContext);
+  const { paintings, setSearch, filteredPaintings } = useContext(CartContext);
+  const navigate = useNavigate();
+
   if (!paintings || paintings.length === 0) {
-    return <div>No paintings available</div>;
+    return <div className="empty-message">No paintings available</div>;
   }
-  function handleClick(paintingId) {
-    Navigate(`/paintings/${paintingId}`);
-  }
+
   return (
-    <div className="painting-list">
-      {paintings.map((painting) => (
-          <Painting painting={painting} key={painting.id} onClick={() => handleClick}/>
-      ))}
+    <div className="painting-list-wrapper">
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search paintings..."
+          className="search-input"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <p className="result-count">{filteredPaintings.length} paintings found</p>
+      </div>
+
+      <div className="gallery-grid">
+        {filteredPaintings.map((painting) => (
+          <Painting
+            painting={painting}
+            key={painting.id}
+            onClick={() => navigate(`/paintings/${painting.id}`)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

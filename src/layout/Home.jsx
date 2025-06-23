@@ -3,8 +3,9 @@ import Footer from "../components/static/Footer";
 import PaintingList from "../components/PaintingList";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import loadingGif  from "../assets/loading.gif";
-
+import loadingGif from "../assets/loading.gif";
+import { ToastContainer } from "react-toastify";
+import '../styles/HomeLayout.css';
 function Home() {
   const { loading, error } = useContext(CartContext);
 
@@ -12,22 +13,25 @@ function Home() {
     <>
       <Header />
       <main>
-        <h1>Home</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, dolor
-          ipsam magni ratione delectus, laborum sequi voluptatem obcaecati
-          tempora rem placeat nihil maxime vel cum aliquam, ex expedita
-          dignissimos quis. Lorem ipsum, dolor sit amet consectetur adipisicing
-          elit. Mollitia atque quos voluptatem libero aperiam commodi eligendi
-          earum, asperiores quis corporis praesentium nemo ut, omnis placeat.
-          Quod quae consequatur vero molestiae?
-        </p>
+        <section className="hero-section">
+          <h1 className="hero-title">Discover Masterpieces</h1>
+          <p className="hero-subtitle">
+            Explore a curated collection of timeless paintings by renowned artists.
+          </p>
+          <a href="#gallery" className="hero-btn">Browse Collection</a>
+        </section>
+
         {loading ? (
-          <div><img src={loadingGif} alt="loading" /></div>
+          <div className="loading-container">
+            <img src={loadingGif} alt="Loading..." />
+          </div>
         ) : error ? (
-          <div>Error: {error.message}</div>
+          <div className="error-message">Error: {error.message}</div>
         ) : (
-          <PaintingList />
+          <section id="gallery">
+            <ToastContainer />
+            <PaintingList />
+          </section>
         )}
       </main>
       <Footer />
