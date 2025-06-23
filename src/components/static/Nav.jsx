@@ -6,7 +6,6 @@ import {
   FaShoppingCart,
   FaSignOutAlt,
   FaSignInAlt,
-  FaUser,
   FaPaintBrush,
 } from "react-icons/fa";
 

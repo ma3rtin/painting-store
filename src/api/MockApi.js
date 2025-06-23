@@ -56,6 +56,6 @@ export async function deletePainting(id) {
     throw new Error("Failed to delete painting");
   }
 
-  return true;
+  return response;
 }
 

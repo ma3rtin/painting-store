@@ -5,14 +5,33 @@ import { CartContext } from "../context/CartContext";
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import "../styles/AdminLayout.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
+import { ToastContainer } from "react-toastify";
 
 function Admin() {
-  const { paintings, deletePainting } = useContext(CartContext);
+  const { paintings, handleDeletePainting } = useContext(CartContext);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
   const navigateToEditPage = (paintingId) => {
     navigate(`/paintings/edit/${paintingId}`);
+  };
+
+  const handleDeleteConfirm = (paintingId) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This painting will be permanently deleted.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#aaa",
+      confirmButtonText: "Yes, delete it",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDeletePainting(paintingId);
+      }
+    });
   };
 
   const filteredPaintings = paintings.filter((p) =>
@@ -23,6 +42,7 @@ function Admin() {
   return (
     <div>
       <Header />
+      <ToastContainer />
       <section className="admin-section">
         <h1 className="admin-title">Admin Panel</h1>
 
@@ -58,7 +78,7 @@ function Admin() {
                     <div className="admin-actions">
                       <button
                         className="action-btn delete-btn"
-                        onClick={() => deletePainting(painting.id)}
+                        onClick={() => handleDeleteConfirm(painting.id)}
                       >
                         <FaTrashAlt />
                       </button>

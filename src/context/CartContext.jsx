@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { fetchPaintings, createPainting, updatePainting } from "../api/MockApi";
+import { fetchPaintings, createPainting, updatePainting, deletePainting } from "../api/MockApi";
 import { toast } from "react-toastify";
 
 export const CartContext = createContext();
@@ -83,6 +83,21 @@ export const CartProvider = ({ children }) => {
         } catch (err) {
           toast.error("Network error");
         }
+  };
+
+  const handleDeletePainting = async (id) => {
+    try {
+      const res = await deletePainting(id);
+      if (res.ok){
+        toast.success("Painting deleted successfully!");
+        fetchPaintings().then((data) => {
+          setPaintings(data);
+        })
+      } 
+      else toast.error("Error deleting painting.");
+    } catch (err) {
+      toast.error("Network error");
+    }
   }
 
   return (
@@ -101,7 +116,8 @@ export const CartProvider = ({ children }) => {
         handleCalculateTotal,
         setSearch,
         handleCreatePainting,
-        handleUpdatePainting
+        handleUpdatePainting,
+        handleDeletePainting
       }}
     >
       {children}
