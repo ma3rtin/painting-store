@@ -2,12 +2,27 @@
 # Proyecto final: Tienda de Pinturas 🖼️ 
 ## Descripción
 
-Proyecto realizado como parte del curso **Talento Tech - React JS**
-La aplicación simula una tienda virtual de venta de pinturas, utilizando la [API del Museo de Arte de Harvard](https://www.harvardartmuseums.org/collections/api), desarrollada con **React** y **Vite**.
+Este proyecto es una aplicación web de eCommerce desarrollada en el marco del curso Talento Tech - React JS.
+
+Permite simular la compra de pinturas, gestionar productos desde un panel de administrador y experimentar funcionalidades reales de un sitio web de ventas desarrollada con **React** y **Vite**.
+
+---
+
+## Algunas funciones
+
+- 🗂️ Context API para manejo global de estado
+
+- 🔒 Rutas protegidas para sección de administración
+
+- 📦 MockAPI para simular el backend
+
+- 🎨 Interfaz responsive y adaptable
+
+- 🔍 Búsqueda y paginación dinámica
+
+- ✅ Validaciones y confirmaciones interactivas
 
 
--  **Galería de pinturas** con datos reales desde la API.
-- **Carrito de compras** para simular la compra de obras.
 
 ---
 
@@ -26,15 +41,8 @@ git clone https://github.com/ma3rtin/painting-store.git
 cd painting-store
 npm install
 ```
-#### 3. Configurar API key
 
-Agrega la API key en este formato en el .env
-```bash
-VITE_API_KEY=TU_API_KEY_DE_HARVARD
-```
-La api key se obtiene gratuitamente acá: https://www.harvardartmuseums.org/collections/api
-
-#### 4. Ejecutar el proyecto
+#### 3. Ejecutar el proyecto
 ```bash
 npm run dev
 ```
