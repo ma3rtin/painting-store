@@ -1,5 +1,5 @@
 .main-header {
-  background-color: #111;
+  background-color: #222121;
 }
 
 .navbar-brand .brand-text {
@@ -29,7 +29,7 @@
 
 .btn-outline-warning:hover {
   background-color: #f0c040;
-  color: #111;
+  color: #222121;
 }
 
 .badge {
@@ -38,7 +38,7 @@
 }
 
 .site-footer {
-  background-color: #111;
+  background-color: #222121;
   color: #ccc;
   padding: 2rem 1rem 1rem;
   font-size: 0.9rem;

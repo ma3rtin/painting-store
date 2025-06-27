@@ -27,7 +27,7 @@
 .hero-btn {
   display: inline-block;
   background-color: #f0c040;
-  color: #111;
+  color: #222121;
   padding: 0.6rem 1.4rem;
   border-radius: 25px;
   text-decoration: none;
@@ -57,37 +57,72 @@
   font-size: 1.2rem;
 }
 .painting-list-wrapper {
-  padding: 2rem 1rem;
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .search-bar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .search-input {
-  flex: 1 1 300px;
   padding: 0.6rem 1rem;
   border: 1px solid #ccc;
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  border-radius: 6px;
+  width: 300px;
+  transition: border-color 0.3s;
 }
 
 .search-input:focus {
+  border-color: #0077cc;
   outline: none;
-  border-color: #f0c040;
 }
 
 .result-count {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 1.2rem;
+  background-color: #222121;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #0c0c0c;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 1rem;
+  color: #333;
 }
 
 .empty-message {
