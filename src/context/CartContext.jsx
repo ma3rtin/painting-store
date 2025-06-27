@@ -142,7 +142,8 @@ const handlePaginationChange = (page) => {
         handleDeletePainting,
         pagination,
         handlePaginationChange,
-        paginatedPaintings
+        paginatedPaintings,
+        paintings
       }}
     >
       {children}
