@@ -1,5 +1,4 @@
-import React from 'react'
-import "./StaticStyle.css"
+import "./staticStyle.css"
 
 function Footer() {
   return (
